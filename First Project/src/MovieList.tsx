@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 
-export class MovieList extends Component {
-  render() {
+const MovieList = () =>{
     return (
-      <div>MovieList</div>
-    )
-  }
+        <div>MovieList</div>
+  
+      )
 }
-
+    
 export default MovieList
