@@ -1,0 +1,26 @@
+.movieList{
+    display:flex;
+}
+
+.movie{
+    background-color: grey;
+    margin:10px 5px;
+    display: flex;
+    border-radius: 10px;
+    padding:10px;
+    min-width:230px;
+    min-height:300px;
+    max-width: 230px;
+    max-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content:end; 
+}
+
+.movie>div{
+
+    bottom:0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
