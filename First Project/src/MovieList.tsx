@@ -28,9 +28,9 @@ const Movies = (props:MovieProps) => {
 const MovieList = () =>{
     return (
         <>
-        <h3>MovieList:</h3>
+        <h3>MyMovieList:</h3>
         <div className="movieList">
-        {movies.map((movie) => <Movies movie_index={movie.id} />)}
+        {movies.map((movie) => <Movies key={movie.id} movie_index={movie.id} />)}
         </div>
         <br/>
         </>
