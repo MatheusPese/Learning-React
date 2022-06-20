@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieList from './MovieList';
-function App() {
+const App = () => {
   return (
   <>
   <h1>Marvel's watched</h1>
