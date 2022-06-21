@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from 'react'
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
+import { toUnitless } from '@mui/material/styles/cssUtils';
 
 ***REMOVED***
 const API_URL ***REMOVED***
@@ -17,7 +18,9 @@ const AddMovie = () => {
       if (query && searchInput.length >= 4){
         const response = await fetch(`${API_URL}&query=${query}`)
         const data = await response.json();
-        const results  = await data.results.map((x:any) => x.original_language =="en"? x.title:"")
+        const filter  = await data.results.filter( (x:any) => x.original_language =="en")
+        const results = await filter.map((x:any) => x.title)
+
         console.log(results)
         const uniqueResults = [...(new Set(results))]
 
