@@ -6,8 +6,8 @@ import './App.css';
 const App = () => {
   return (
   <>
-  <h1>My Marvel's watchlist</h1>
-  <h2>Every movie and series I watched from the marvel cinematic universe.</h2>
+  <h1>My movie watchlist</h1>
+  <h2>Every movie and series I watched.</h2>
 
   <MovieList/>
   <AddMovie/>
