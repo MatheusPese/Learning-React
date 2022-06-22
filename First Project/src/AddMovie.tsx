@@ -3,10 +3,12 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { toUnitless } from '@mui/material/styles/cssUtils';
 
-***REMOVED***
-const API_URL ***REMOVED***
+
+const API_KEY = import.meta.env.VITE_THEMOVIEDB_API_KEY
+const API_URL =`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US`
 
 const AddMovie = () => {
+    
     const [searchInput, setSearchInput] = useState<string>("");
     const [searchQuery, setSearchQuery] = useState<any>([]);
     

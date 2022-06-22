@@ -25,5 +25,6 @@ dist-ssr
 testFiles
 
 
-# Credentials and Certificates
+# Credentials, Certificates, Keys, ...
 cred
+.env
