@@ -20,7 +20,7 @@ const AddMovie = () => {
         const filter  = await data.results.filter( (x:any) => x.original_language =="en")
         const results:Array<string> = await filter.map((x:any) => x.title)
         const uniqueResults:Array<string> = [...(new Set(results))]
-
+        
         setSearchResult(uniqueResults)
       }
       else{
@@ -33,13 +33,11 @@ const AddMovie = () => {
     }
 
     return (
-        <label>
-          <Autocomplete
-          id="teste"
-          options={searchQuery? searchQuery:""}
-          sx={{width:300}}
-          renderInput={(params) => <TextField {...params} onChange={(e) => changeAutocomplete(e)} onClick={(e) => changeAutocomplete(e)} label="Movie" />}
-          />
+      <label>
+        <input list='movies' onChange={(e) => changeAutocomplete(e)} onClick={(e) => changeAutocomplete(e)}/>
+        <datalist id='movies'>
+          {searchResult.map((x:string) => <option value={x}/>)}
+        </datalist>
         <select name="Status">
           <option value="Not Watched">Not Watched</option>
           <option value="Watched">Watched</option>
