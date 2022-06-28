@@ -1,7 +1,4 @@
 import React, { Component, useEffect, useState } from 'react'
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
-import { toUnitless } from '@mui/material/styles/cssUtils';
 
 
 const API_KEY = import.meta.env.VITE_THEMOVIEDB_API_KEY
