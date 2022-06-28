@@ -7,7 +7,7 @@ const API_URL =`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&lan
 const AddMovie = () => {
     
     const [searchInput, setSearchInput] = useState<string>("");
-    const [searchQuery, setSearchQuery] = useState<any>([]);
+    const [searchResult, setSearchResult] = useState<Array<string>>([]);
     
     useEffect(()=>{
       MovieSearch(searchInput)
@@ -18,15 +18,13 @@ const AddMovie = () => {
         const response = await fetch(`${API_URL}&query=${query}`)
         const data = await response.json();
         const filter  = await data.results.filter( (x:any) => x.original_language =="en")
-        const results = await filter.map((x:any) => x.title)
+        const results:Array<string> = await filter.map((x:any) => x.title)
+        const uniqueResults:Array<string> = [...(new Set(results))]
 
-        console.log(results)
-        const uniqueResults = [...(new Set(results))]
-
-        setSearchQuery(uniqueResults)
+        setSearchResult(uniqueResults)
       }
       else{
-        setSearchQuery([])
+        setSearchResult([])
       }
     }
     const changeAutocomplete = (e:any) => {
